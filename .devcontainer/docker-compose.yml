@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  StravaMyFitnessPalETL:
+    image: strava-my-fitness-pal-python-3.10.2
+    container_name: strava-my-fitness-pal-python-app
+    build: 
+      context: ..
+      target: development 
+      dockerfile: Dockerfile
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    volumes:
+      - ${PRIVATE_PROJECTS_DIR}/Strava-MyFitnessPal-ETL:/Strava-MyFitnessPal-ETL:delegated
+      - /mnt/c/Users/${UserName}/.ssh/:/root/.ssh
