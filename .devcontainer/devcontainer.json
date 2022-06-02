@@ -1,0 +1,64 @@
+{
+    "name": "strava-my-fitness-pal-python-3.10.2",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "StravaMyFitnessPalETL",
+    "workspaceFolder": "/Strava-MyFitnessPal-ETL",
+    "forwardPorts": [
+        5433,
+        4585,
+        4573
+    ],
+    "settings": {
+        "editor.formatOnSave": true,
+        "python.languageServer": "Pylance",
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+            "bash": {
+                "path": "/bin/bash"
+            }
+        },
+        "python.pythonPath": "/usr/bin/python",
+        "python.sortImports.path": "/usr/local/bin/isort",
+        "python.linting.enabled": true,
+        "python.linting.flake8Enabled": true,
+        "python.linting.flake8Path": "/usr/local/bin/flake8",
+        "python.linting.flake8Args": [
+            "--max-line-length=120",
+            "--extend-ignore=E203,W503,F401"
+        ],
+        "python.formatting.provider": "black",
+        "python.formatting.blackPath": "/usr/local/bin/black",
+        "python.testing.unittestEnabled": true,
+        "[python]": {
+            "editor.codeActionsOnSave": {
+                "source.organizeImports": true
+            },
+            "editor.rulers": [
+                72,
+                79,
+                105
+            ]
+        },
+        "git.autofetch": true,
+        "git.path": "/usr/bin/git",
+        "files.trimTrailingWhitespace": true,
+        "files.exclude": {
+            "**/*.pyc": {
+                "when": "$(basename).py"
+            },
+            "**/__pycache__": true,
+        },
+        "yaml.validate": true,
+        "autoDocstring.docstringFormat": "sphinx",
+    },
+    "extensions": [
+        "ms-python.python",
+        "ms-azuretools.vscode-docker",
+        "njqdev.vscode-python-typehint",
+        "redhat.vscode-yaml",
+        "eamodio.gitlens",
+        "njpwerner.autodocstring",
+        "aaron-bond.better-comments",
+        "vscode-icons-team.vscode-icons"
+    ]
+}
